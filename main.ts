@@ -1,13 +1,11 @@
-input.onButtonPressed(Button.A, function () {
+input.onSound(DetectedSound.Quiet, function () {
+    basic.showIcon(IconNames.Asleep)
+})
+input.setSoundThreshold(SoundThreshold.Quiet, 113)
+basic.forever(function () {
     led.plotBarGraph(
     input.soundLevel(),
-    128
+    255
     )
+    basic.pause(100)
 })
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.showString("Hello!")
-})
-input.onSound(DetectedSound.Quiet, function () {
-	
-})
-input.setSoundThreshold(SoundThreshold.Loud, 128)
